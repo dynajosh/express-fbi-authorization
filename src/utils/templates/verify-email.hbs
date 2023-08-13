@@ -1,0 +1,48 @@
+<mjml>
+  <mj-head>
+    <mj-style>
+      /* Font */
+      @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+      /* Media Queries */
+      @media only screen and (max-width: 480px) {
+        .header-logo {
+          padding-bottom: 20px !important;
+        }
+        .body-content {
+          /* padding: 20px !important; */
+        }
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#FFEDCC">
+    <mj-section background-color="#f7a600" padding-bottom="0">
+      <mj-column>
+        {{!-- <mj-image src="https://res.cloudinary.com/dynajosh/image/upload/v1686526531/Gambitt.png" alt="Gambit" width="150px" class="header-logo" /> --}}
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFEDCC" padding-top="20px">
+      <mj-column>
+        <mj-text font-size="24px" color="#0e0f16" font-family="Montserrat, sans-serif">Email Verification</mj-text>
+        <mj-divider border-color="#0e0f16" padding-top="20px" />
+        <mj-text font-size="16px" line-height="1.5" color="#0e0f16" font-family="Montserrat, sans-serif">
+          Hi,<br />
+          To verify your email address, please click the button below:
+          <br /><br />
+          This verification link is valid for a limited time. If you did not sign up for an account on Gambit, please ignore this email.
+          <br /><br />
+          Thank you for choosing Gambit.
+        </mj-text>
+        <mj-button background-color="#f7a600" color="#0e0f16" font-family="Montserrat, sans-serif" align="center" href="{{verificationLink}}">Verify Email</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#0e0f16" padding-top="20px" padding-bottom="20px">
+      <mj-column>
+        <mj-text font-size="12px" line-height="1.5" color="#FFEDCC" font-family="Montserrat, sans-serif" align="center">
+          This email was sent by EFF BEE HIGH<br />
+          support@usegambit.com<br />
+          &copy; 2023 EFF BEE HIGH . All rights reserved.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

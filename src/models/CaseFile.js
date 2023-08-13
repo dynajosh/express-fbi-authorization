@@ -16,6 +16,10 @@ const CaseFile = sequelize.define("case_files",{
         type: DataTypes.INTEGER,
         defaultValue:1
     },
+    title: {
+        type:DataTypes.STRING,
+        aallowNull: false
+    }
 
 })
 

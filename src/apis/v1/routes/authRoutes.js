@@ -2,6 +2,7 @@ import {User} from '../../../models/models.js';
 import express from 'express';
 import bcrypt from 'bcrypt';
 import { jwtTokens } from '../../../utils/jwtHelper.js';
+import sendEmail from '../../../utils/sendEmail.js';
 
 
 const router = express.Router();
@@ -106,6 +107,8 @@ router.post('create-user', async(req, res)=>{
             level:level,
         })
         // Send ann activation link
+        sendEmail(email);
+        
         res.status(200).json({
             message: "Agent Created and activation link has been sent"
         })
