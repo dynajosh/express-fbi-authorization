@@ -19,9 +19,22 @@ const CaseFile = sequelize.define("case_files",{
     title: {
         type:DataTypes.STRING,
         aallowNull: false
+    },
+    body: {
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    author: {
+        type:DataTypes.UUID,
+        allowNull: false,
+        references: {
+            model: 'users',
+            key: 'user_id'
+        }
     }
-
 })
 
+CaseFile.belongsTo(User, {foreignKey: 'author', as: 'caseAuthor'});
 
-export default CaseFile;;
+
+export default CaseFile;

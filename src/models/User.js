@@ -15,6 +15,14 @@ const User = sequelize.define("users", {
         primaryKey: true,
         unique:true
     },
+    first_name: {
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    last_name: {
+        type: DataTypes.STRING,
+        allowNull:false
+    },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -32,5 +40,7 @@ const User = sequelize.define("users", {
         defaultValue: 1
     }
 });
+
+User.hasMany(CaseFile, {foreignKey: 'author', as :'authoredCases'});
 
 export default User;
