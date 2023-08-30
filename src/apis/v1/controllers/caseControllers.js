@@ -1,5 +1,5 @@
 import {CaseFile} from '../../../models/models.js';
-import authorizeAccess from '../../../middlewares/authorizationMiddleware';
+import authorizeAccess from '../../../middlewares/authorizationMiddleware.js';
 
 
 

@@ -34,7 +34,6 @@ const CaseFile = sequelize.define("case_files",{
     }
 })
 
-CaseFile.belongsTo(User, {foreignKey: 'author', as: 'caseAuthor'});
 
 
 export default CaseFile;

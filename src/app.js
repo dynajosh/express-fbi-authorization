@@ -6,8 +6,8 @@ import swaggerUi from 'swagger-ui-express';
 import {dirname, join} from 'path';
 import { fileURLToPath } from 'url';
 import bodyParser from 'body-parser';
-import authRouter from './src/apis/v1/routes/authRoutes';
-import caseRouter from './src/apis/v1/routes/caseFilesRoutes'
+import authRouter from './apis/v1/routes/authRoutes.js'
+import caseRouter from './apis/v1/routes/caseFilesRoutes.js'
 import {readFile} from 'fs/promises';
 import basicAuth from 'express-basic-auth';
 
@@ -21,16 +21,16 @@ const app = express()
 const corsOptions = ['localhost:3000', process.env.ALLOWED_URL, ]
 const host = '0.0.0.0';
 
-const server =  http.createServer(app);
+// const server =  http.createServer(app);
 
-const io = new Server(server, {
-    cors: {
-        // origin: "http://localhost:3000"
-        origin: ["http://localhost:3000", "http://localhost:4000"]
+// const io = new Server(server, {
+//     cors: {
+//         // origin: "http://localhost:3000"
+//         origin: ["http://localhost:3000", "http://localhost:4000"]
 
-    }
+//     }
     
-});
+// });
 
 
 

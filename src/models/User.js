@@ -41,6 +41,5 @@ const User = sequelize.define("users", {
     }
 });
 
-User.hasMany(CaseFile, {foreignKey: 'author', as :'authoredCases'});
 
 export default User;

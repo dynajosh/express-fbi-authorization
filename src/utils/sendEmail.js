@@ -1,17 +1,22 @@
 import sgMail from '@sendgrid/mail';
 import dotenv from 'dotenv';
-import * as path from 'path'
+import {dirname, join} from 'path';
 import { fileURLToPath } from 'url';
 import mjml from 'mjml';
 import handlebars from 'handlebars';
+import { readFileSync } from 'fs';
+
 
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+
 const verifyEmailRawTemplate = readFileSync(`${__dirname}/templates/verify-email.hbs`, 'utf8');
 const verifyEmailCompiledTemplate = handlebars.compile(verifyEmailRawTemplate);
 
-const sendEmail = () => {
+const sendEmail = async () => {
     try {
         const email_data = {
             verificationLink: `${process.env.ALLOWED_URL}/verify-account/?token=`
